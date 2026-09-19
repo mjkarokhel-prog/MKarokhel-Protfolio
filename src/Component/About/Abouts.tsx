@@ -12,7 +12,8 @@ const CARDS = [
     tagColor: "text-[#e8542a]",
     content: (
       <p className="text-[20px] leading-[1.55] text-[#26241f]">
-        I build clean, responsive interfaces and turn designs into working websites using modern frontend tools.
+        I build clean, responsive interfaces and turn designs into working
+        websites using modern frontend tools.
       </p>
     ),
   },
@@ -22,7 +23,8 @@ const CARDS = [
     tagColor: "text-[#e8542a]",
     content: (
       <p className="text-[20px] leading-[1.55] text-[#26241f]">
-        I recently completed the Frontend Development track at Upskill Bootcamp, focusing on HTML, CSS, JavaScript, and React fundamentals.
+        I recently completed the Frontend Development track at Upskill Bootcamp,
+        focusing on HTML, CSS, JavaScript, and React fundamentals.
       </p>
     ),
   },
@@ -32,7 +34,9 @@ const CARDS = [
     tagColor: "text-[#e8542a]",
     content: (
       <p className="text-[20px] leading-[1.55] text-[#26241f]">
-        "I believe in writing clean, readable code and paying close attention to detail. I'm early in my journey, and I treat every project as a chance to learn."
+        "I believe in writing clean, readable code and paying close attention to
+        detail. I'm early in my journey, and I treat every project as a chance
+        to learn."
       </p>
     ),
   },
@@ -63,15 +67,14 @@ const CARDS = [
 ];
 
 export default function AboutMeStack() {
-  const cardsRef = useRef([]);
-  const titleRef = useRef(null);
-  const pillRef = useRef(null);
-
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const pillRef = useRef<HTMLSpanElement | null>(null);
   // title — same SplitText char-cascade used on Contact/Skills/Process/Projects
   useEffect(() => {
     if (!titleRef.current) return;
 
-    let split;
+    let split: SplitText | undefined;
 
     const ctx = gsap.context(() => {
       gsap.set(pillRef.current, { opacity: 0, y: -8 });
@@ -80,13 +83,22 @@ export default function AboutMeStack() {
       gsap.set(split.chars, { opacity: 0, y: 8 });
 
       const tl = gsap.timeline({
-        scrollTrigger: { trigger: titleRef.current, start: "top 85%", once: true },
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 85%",
+          once: true,
+        },
       });
 
-      tl.to(pillRef.current, { opacity: 1, y: 0, duration: 0.4, ease: "sine.out" }).to(
+      tl.to(pillRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        ease: "sine.out",
+      }).to(
         split.chars,
         { opacity: 1, y: 0, duration: 0.4, ease: "power2.out", stagger: 0.016 },
-        "-=0.2"
+        "-=0.2",
       );
     });
 
@@ -124,7 +136,7 @@ export default function AboutMeStack() {
               end: "top top+=100",
               scrub: 1.1, // small lag = smoother feel, still tied to scroll
             },
-          }
+          },
         );
       });
 
@@ -158,12 +170,16 @@ export default function AboutMeStack() {
         {CARDS.map((card, i) => (
           <div
             key={card.tag}
-            ref={(el) => (cardsRef.current[i] = el)}
+            ref={(el) => {
+              cardsRef.current[i] = el;
+            }}
             style={{ zIndex: i + 1, marginBottom: "10px" }}
             className="sticky bg-white rounded-[20px] px-7 pt-[26px] pb-[30px] "
           >
             <div className="flex items-center gap-3 text-[16px] font-semibold mb-3.5">
-              <span className={`w-[7px] h-[7px] rounded-full ${card.dotColor}`} />
+              <span
+                className={`w-[7px] h-[7px] rounded-full ${card.dotColor}`}
+              />
               <span className={card.tagColor}>{card.tag}</span>
             </div>
             {card.content}

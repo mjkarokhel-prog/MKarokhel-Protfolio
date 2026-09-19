@@ -12,8 +12,8 @@ const STATS = [
 ];
 
 export default function StatsCounter() {
-  const numberRefs = useRef([]);
-  const sectionRef = useRef(null);
+  const numberRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -58,7 +58,9 @@ export default function StatsCounter() {
             className="bg-white rounded-[28px] px-8 pt-14 pb-12 flex flex-col items-center"
           >
             <span
-              ref={(el) => (numberRefs.current[i] = el)}
+              ref={(el) => {
+                numberRefs.current[i] = el;
+              }}
               className="text-[60px] leading-none font-bold text-[#e8542a] mb-4"
             >
               0{stat.suffix}

@@ -39,7 +39,7 @@ export default function ProjectsShowcase() {
   useEffect(() => {
     if (!titleRef.current) return;
 
-    let split;
+    let split: SplitText | undefined;
 
     const ctx = gsap.context(() => {
       gsap.set(pillRef.current, { opacity: 0, y: -8 });
@@ -48,13 +48,22 @@ export default function ProjectsShowcase() {
       gsap.set(split.chars, { opacity: 0, y: 8 });
 
       const tl = gsap.timeline({
-        scrollTrigger: { trigger: titleRef.current, start: "top 85%", once: true },
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 85%",
+          once: true,
+        },
       });
 
-      tl.to(pillRef.current, { opacity: 1, y: 0, duration: 0.4, ease: "sine.out" }).to(
+      tl.to(pillRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        ease: "sine.out",
+      }).to(
         split.chars,
         { opacity: 1, y: 0, duration: 0.4, ease: "power2.out", stagger: 0.016 },
-        "-=0.2"
+        "-=0.2",
       );
     });
 
