@@ -1,5 +1,4 @@
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./Component/Navbar/Navbar";
 import Header from "./Component/Header/Header";
 import AboutMeStack from "./Component/About/Abouts";
@@ -26,7 +25,6 @@ function App() {
         <ProcessSteps />
         <SkillsSection />
         <ContactSection />
-        <Analytics />
         <SpeedInsights />
       </div>
       <Footer />
