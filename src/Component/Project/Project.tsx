@@ -32,7 +32,7 @@ const PROJECTS = [
 
     github: "https://github.com/mjkarokhel-prog/Shopper-eCommerce-Project",
 
-    live: "https://shopper-e-commerce-project-eight.vercel.app",
+    live: "https://shopper-e-commerce-project-khaki.vercel.app/",
   },
 
   {
