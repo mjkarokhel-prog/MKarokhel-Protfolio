@@ -66,7 +66,7 @@ export default function ClientsMarquee() {
   const track = useMemo(() => [...LOGOS, ...LOGOS], []);
 
   return (
-    <section className="relative bottom-60 right-0 left-0 w-full px-6">
+    <section className="relative bottom-48 right-0 left-0 w-full px-6">
       <div className="max-w-[1200px] mx-auto rounded-[999px] py-12 px-20 bg-white flex items-center overflow-hidden">
         <span className="shrink-0 pl-5 pr-16 py-8 text-[20px] font-medium text-[#3a3937] italic">
           Clients &amp; collaborators
