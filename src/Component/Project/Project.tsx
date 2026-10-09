@@ -38,7 +38,7 @@ const PROJECTS = [
   {
     name: "Khost Super Market",
     year: "2026",
-    gradient: null,
+    gradient: "linear-gradient(160deg,#dcecff 0%,#5d91f5 45%,#1551b8 100%)",
     bg: "#c9c7c1",
     github: "https://github.com/mjkarokhel-prog/Khost-Super-Market.git",
     live: "https://khost-super-market.vercel.app/",
