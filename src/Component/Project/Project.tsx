@@ -36,12 +36,12 @@ const PROJECTS = [
   },
 
   {
-    name: "EduNova",
+    name: "Khost Super Market",
     year: "2026",
     gradient: null,
     bg: "#c9c7c1",
-    github: "#",
-    live: "#",
+    github: "https://github.com/mjkarokhel-prog/Khost-Super-Market.git",
+    live: "https://khost-super-market.vercel.app/",
   },
 ];
 
