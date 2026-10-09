@@ -419,42 +419,6 @@ export default function ProjectsShowcase() {
               </div>
 
               {/* ==========================================
-                  VIEW PROJECT TEXT
-              =========================================== */}
-
-              <div
-                className="
-                  absolute
-                  top-5
-                  left-5
-                  z-30
-
-                  px-4
-                  py-2
-
-                  rounded-full
-
-                  bg-black/70
-                  backdrop-blur-md
-
-                  text-white
-                  text-[11px]
-                  font-medium
-
-                  opacity-0
-                  -translate-y-3
-
-                  group-hover:opacity-100
-                  group-hover:translate-y-0
-
-                  transition-all
-                  duration-500
-                "
-              >
-                View project
-              </div>
-
-              {/* ==========================================
                   PROJECT INFO
               =========================================== */}
 
